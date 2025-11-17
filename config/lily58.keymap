@@ -29,9 +29,8 @@
                            &kp LALT  &kp LGUI  &mo 1   &kp SPACE    &kp RET   &mo 2   &kp BSPC  &kp RGUI
             >;
 
-            sensor-bindings = <
-        &inc_dec_kp C_VOL_UP C_VOL_DN  /* Первый энкодер: громкость вверх/вниз */
-        &inc_dec_kp PG_UP PG_DN        /* Второй энкодер: Page Up/Page Down */
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
     >;
         
         };
