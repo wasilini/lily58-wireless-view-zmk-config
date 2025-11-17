@@ -8,9 +8,20 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-/ {
+/ { 
+    behaviors {
+        rot_kp: sensor_rotate_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+        };
+    };  
+
     keymap {
-        compatible = "zmk,keymap";
+        compatible = "zmk,keymap"; 
+        base {
+            sensor-bindings = <&rot_kp PG_UP PG_DN>;
+        }
 
         default_layer {
             // ------------------------------------------------------------------------------------------------------------
