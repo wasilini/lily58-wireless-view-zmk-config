@@ -9,7 +9,21 @@
 #include <dt-bindings/zmk/keys.h>
 
 / { 
+
+    behaviors {
+        volknob: volume_encoder {
+      compatible = "zmk,behavior-sensor-rotate";
+      #sensor-binding-cells = <0>;
+      bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
+        };
+       rgbknob: rgb_encoder {
+      compatible = "zmk,behavior-sensor-rotate-var";
+      #sensor-binding-cells = <2>;
+      bindings = <&rgb_ug>, <&rgb_ug>;
+        };
+    };
     
+
     keymap {
         compatible = "zmk,keymap"; 
        default_layer {
@@ -29,7 +43,7 @@
                            &kp LALT  &kp LGUI  &mo 1   &kp SPACE    &kp RET   &mo 2   &kp BSPC  &kp RGUI
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&volknob C_VOL_UP C_VOL_DN &rgbknob PG_UP PG_DN>;
         
         };
 
