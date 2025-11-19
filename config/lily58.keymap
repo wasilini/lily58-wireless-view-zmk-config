@@ -10,7 +10,7 @@
 
 
 / {
-sensors: [
+sensors: {
     {
       "ref": "left_encoder",
       "name": "encoder_left",
@@ -25,7 +25,7 @@ sensors: [
       "compatible": "alps,ec11",
       "label": "RIGHT_ENCODER"
     }
-  ]
+      }
      
     keymap {
          compatible = "zmk,keymap";
