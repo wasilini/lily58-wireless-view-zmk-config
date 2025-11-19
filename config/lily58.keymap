@@ -41,7 +41,7 @@ behaviors {
 &kp ESC   
             >;
         
-            sensor-bindings = <&volknob &rgbknob>;
+            sensor-bindings = <&rgbknob &volknob>;
             
         };
 
